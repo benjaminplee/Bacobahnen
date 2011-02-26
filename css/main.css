@@ -1,0 +1,23 @@
+body {
+	color: #555;
+}
+
+h1 {
+	text-align: center;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.grid {
+	border: 2px solid #555;
+	border-collapse: collapse;
+}
+
+table.grid td {
+	border: 1px solid #CCC;
+	height: 150px;
+	width: 200px;
+}
