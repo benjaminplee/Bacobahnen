@@ -20,10 +20,6 @@
 		return false;
 	}
 
-	function replace() {
-
-	}
-
 	$('.grid td').live('click', addBlock)
 
 	function gridBuilder(tableSelector, cols, rows) {
