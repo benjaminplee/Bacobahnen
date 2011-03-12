@@ -1,26 +1,15 @@
 (function($) {
 	
-	$.fn.replace = function(eventType, newHandler) {
-		this.unbind(eventType).bind(eventType, newHandler)
-	}
-	
-	function addBlock() {
-		var text = prompt("What would you like the block to say?")
-
-		if(text) {
-			$(this).toggleClass('block').html(text).replace('click', removeBlock)
+	$('.editable').live('focus', function() {
+		$(this).addClass('block')
+		this.designMode = 'on';
+	}).live('blur', function() {
+		if(!$(this).html().trim()) {
+			$(this).removeClass('block')
 		}
-
-		return false;
-	}
-
-	function removeBlock() {
-		$(this).toggleClass('block').html('').replace('click', addBlock)
-
-		return false;
-	}
-
-	$('.grid td').live('click', addBlock)
+		
+		this.designMode = 'off';
+	})
 
 	function gridBuilder(tableSelector, cols, rows) {
 		return function() {
@@ -32,7 +21,7 @@
 				gridText += '<tr>'
 
 				for(var col = 0; col < cols; col++) {
-					gridText += '<td></td>'
+					gridText += '<td contenteditable="true" class="editable"></td>'
 				}
 
 				gridText += '</tr>'
