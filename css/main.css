@@ -26,6 +26,6 @@ table.grid td {
 	vertical-align: middle;
 }
 
-.block {
+table.grid td:not(:empty) {
 	background-color: #D3E3D5;
 }
