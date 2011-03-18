@@ -1,9 +1,7 @@
-(function($) {
-	
-	$('.grid td').live('keyup', function() {
+$(function() {
+	$('.grid td').keyup( function() {
 		if(!$(this).text().trim()) {
-			$(this).html('')
+			$(this).empty().blur()
 		}
 	})
-
-})(jQuery)
+})
