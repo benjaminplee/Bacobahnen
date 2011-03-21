@@ -5,17 +5,14 @@ body {
 
 h1 {
 	text-align: center;
-	text-shadow: 2px 2px 2px #aaa;
-}
-
-.center {
-	margin-left: auto;
-	margin-right: auto;
+	text-shadow: 2px 2px 2px #CCC;
 }
 
 table.grid {
 	border: 2px solid #555;
 	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 table.grid td {
