@@ -1,18 +1,20 @@
-@font-face {
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Ubuntu'), url('Ubuntu-Regular.woff') format('woff');
-}
-
 body {
-	color: #555;
+	color: #888;
 	font-family: 'Ubuntu', arial, serif;
+	text-align: center;
 }
 
-h1 {
-	text-align: center;
+h1, h3 {
 	text-shadow: 2px 2px 2px #CCC;
+	color: #555;
+}
+
+h3 {
+	font-style: italic;
+}
+
+p {
+	margin-top: 100px;
 }
 
 table.grid {
