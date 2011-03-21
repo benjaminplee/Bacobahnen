@@ -1,7 +1,9 @@
 $(function() {
-	$('.grid td').keyup( function() {
-		if(!$(this).text().trim()) {
-			$(this).empty().blur()
-		}
+	
+	$('#board td').append("<div class='block' contentEditable='true'></div>")
+	
+	$('.block').keyup( function() {
+		$(this).toggleClass('filled', !!$(this).text().trim())
 	})
+	
 })

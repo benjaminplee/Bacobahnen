@@ -22,10 +22,14 @@ table.grid td {
 	border: 1px solid #CCC;
 	height: 100px;
 	width: 150px;
-	text-align: center;
-	vertical-align: middle;
 }
 
-table.grid td:not(:empty) {
+.block {
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+.filled {
 	background-color: #D3E3D5;
 }
