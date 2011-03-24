@@ -2,8 +2,22 @@ var
 	path = require('path'),
 	http = require('http'),
 	paperboy = require('paperboy'),
-	PORT = 80,
+	git = require('nodegit'),
+	PORT = 3000,
 	WEBROOT = path.join(path.dirname(__filename), 'web');
+
+var gitSHA;
+git.repo('.git', function(err, repo){
+	if(err) { gitSHA = err; }
+	repo.branch('master', function(err, branch){
+		if (err) { gitSHA = err; }
+		console.log(branch.history.length);
+		branch.history.each(function(i, commit){
+			console.log(i + '  ' + commit.sha);
+		})
+	});
+});
+console.log(gitSHA);
 
 http.createServer(function(req, res) {
 	var ip = req.connection.remoteAddress;
@@ -11,6 +25,7 @@ http.createServer(function(req, res) {
 	paperboy
 		.deliver(WEBROOT, req, res)
 		.addHeader('Expires', 300)
+		.addHeader('X-GitSHA', gitSHA)
 		.before(function() {
 			console.log('Received Request');
 		})
