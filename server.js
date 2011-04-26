@@ -1,9 +1,10 @@
 var
 	path = require('path'),
 	http = require('http'),
+	os = require('os'),
 	paperboy = require('paperboy'),
 	exec = require('child_process').exec,
-	PORT = 3000,
+	PORT = os.hostname() == 'baco.no.de' ? 80 : 3000,
 	WEBROOT = path.join(path.dirname(__filename), 'web'),
 	gitSHA;
 
