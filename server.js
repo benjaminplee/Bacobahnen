@@ -2,8 +2,14 @@ var
 	path = require('path'),
 	http = require('http'),
 	paperboy = require('paperboy'),
-	PORT = 80,
-	WEBROOT = path.join(path.dirname(__filename), 'web');
+	exec = require('child_process').exec,
+	PORT = 3000,
+	WEBROOT = path.join(path.dirname(__filename), 'web'),
+	gitSHA;
+
+exec('git rev-parse HEAD', function(err, stdout, stderr) {
+	gitSHA = stdout;
+});
 
 http.createServer(function(req, res) {
 	var ip = req.connection.remoteAddress;
@@ -11,6 +17,7 @@ http.createServer(function(req, res) {
 	paperboy
 		.deliver(WEBROOT, req, res)
 		.addHeader('Expires', 300)
+		.addHeader('X-GitSHA', gitSHA)
 		.before(function() {
 			console.log('Received Request');
 		})
