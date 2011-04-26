@@ -2,22 +2,14 @@ var
 	path = require('path'),
 	http = require('http'),
 	paperboy = require('paperboy'),
-	git = require('nodegit'),
+	exec = require('child_process').exec,
 	PORT = 3000,
-	WEBROOT = path.join(path.dirname(__filename), 'web');
+	WEBROOT = path.join(path.dirname(__filename), 'web'),
+	gitSHA;
 
-var gitSHA;
-git.repo('.git', function(err, repo){
-	if(err) { gitSHA = err; }
-	repo.branch('master', function(err, branch){
-		if (err) { gitSHA = err; }
-		console.log(branch.history.length);
-		branch.history.each(function(i, commit){
-			console.log(i + '  ' + commit.sha);
-		})
-	});
+exec('git rev-parse HEAD', function(err, stdout, stderr) {
+	gitSHA = stdout;
 });
-console.log(gitSHA);
 
 http.createServer(function(req, res) {
 	var ip = req.connection.remoteAddress;
