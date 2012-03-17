@@ -1,16 +1,55 @@
+/* RESET */
+
+html, body {
+  margin: 0;
+}
+
+h1 {
+  -webkit-margin-before: 0;
+}
+
+/* REAL STUFF */
+
 body {
-	color: #888;
+  color: #143352;
+	background: #D9EEF2;
 	font-family: 'Ubuntu', arial, serif;
-	text-align: center;
 }
 
-h1, h3 {
-	text-shadow: 2px 2px 2px #CCC;
-	color: #555;
+header {
+  height: 3em;
 }
 
-h3 {
-	font-style: italic;
+.dark {
+  color: white;
+  background: #143352;
 }
 
-.draggable { width: 150px; height: 150px; margin: 10px 10px; padding: 5px 5px; }
+.dark a {
+	color: red;
+}
+
+.dark a:link, .dark a:visited {
+	text-decoration: none;
+}
+
+.dark a:hover, .dark a:active {
+	text-decoration: underline;
+}
+
+.draggable { position: absolute; width: 150px; height: 150px; margin: 10px 10px; padding: 5px 5px; }
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  height: 4em;
+  font-size: 0.75em;
+  width: 100%;
+  padding: 0.5em 0;
+}
+
+.license {
+  border-width: 0;
+  float: right;
+}
