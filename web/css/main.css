@@ -11,8 +11,8 @@ h1 {
 /* REAL STUFF */
 
 body {
-  color: #143352;
-	background: #D9EEF2;
+  color: #303030;
+	background: #E8E8E8;
 	font-family: 'Ubuntu', arial, serif;
 }
 
@@ -21,20 +21,22 @@ header {
 }
 
 .dark {
-  color: white;
-  background: #143352;
+  color: #E8E8E8;
+  background: #303030;
 }
 
-.dark a {
+a {
 	color: red;
 }
 
-.dark a:link, .dark a:visited {
+a:link, a:visited {
 	text-decoration: none;
+	color: red;
 }
 
-.dark a:hover, .dark a:active {
+a:hover, a:active {
 	text-decoration: underline;
+	color: red;
 }
 
 .draggable { position: absolute; width: 150px; height: 150px; margin: 10px 10px; padding: 5px 5px; }
