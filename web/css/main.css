@@ -13,29 +13,4 @@ h3 {
 	font-style: italic;
 }
 
-p {
-	margin-top: 100px;
-}
-
-table.grid {
-	border: 2px solid #555;
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-table.grid td {
-	border: 1px solid #CCC;
-	height: 100px;
-	width: 150px;
-}
-
-.block {
-	height: 100%;
-	padding: 5px;
-	text-align: center;
-}
-
-.filled {
-	background-color: #D3E3D5;
-}
+.draggable { width: 150px; height: 150px; margin: 10px 10px; padding: 5px 5px; }
