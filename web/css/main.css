@@ -42,7 +42,7 @@ a:hover, a:active {
 .draggable {
   position: absolute;
   width: 150px;
-  height: 150px;
+  height: 75px;
   margin: 10px;
   padding: 5px;
 }
